@@ -1,0 +1,143 @@
+/* базова скидання */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  /* кольори */
+  :root {
+	--gray-light: #f6f6f6;
+	--gray-medium: #cccccc;
+	--gray-dark: #333333;
+	--yellow-light: #fff9e6;
+	--yellow-medium: #f5c518;
+	--yellow-dark: #d4af37;
+	--font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* тіло сторінки */
+  body {
+	font-family: var(--font-family);
+	background-color: var(--gray-light);
+	color: var(--gray-dark);
+	line-height: 1.6;
+	padding: 20px;
+  }
+  
+  /* контейнер */
+  .container {
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* заголовки */
+  h1, h2, h3 {
+	margin-bottom: 15px;
+	color: var(--gray-dark);
+  }
+  
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.75em; }
+  h3 { font-size: 1.5em; }
+  
+  /* навігація */
+  nav {
+	background-color: var(--gray-dark);
+	padding: 10px 20px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+  }
+  nav a {
+	color: var(--yellow-light);
+	text-decoration: none;
+	margin-right: 15px;
+	font-weight: bold;
+  }
+  nav a:hover {
+	color: var(--yellow-medium);
+  }
+  
+  /* кнопки */
+  button, .btn {
+	display: inline-block;
+	background-color: var(--yellow-medium);
+	color: var(--gray-dark);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+  }
+  button:hover, .btn:hover {
+	background-color: var(--yellow-dark);
+  }
+  
+  /* форми */
+  form {
+	margin-top: 20px;
+  }
+  form label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+  }
+  form input[type="text"],
+  form input[type="password"],
+  form textarea {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid var(--gray-medium);
+	border-radius: 4px;
+	margin-bottom: 15px;
+	font-size: 1em;
+  }
+  form textarea {
+	resize: vertical;
+  }
+  
+  /* таблиці / списки локацій */
+  .table, table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+  }
+  .table th, .table td, th, td {
+	padding: 12px;
+	border: 1px solid var(--gray-medium);
+  }
+  .table th {
+	background-color: var(--gray-dark);
+	color: var(--yellow-light);
+	text-align: left;
+  }
+  
+  /* картки прогнозу */
+  .card {
+	background-color: var(--yellow-light);
+	border: 1px solid var(--gray-medium);
+	border-radius: 6px;
+	padding: 15px;
+	margin-bottom: 20px;
+  }
+  .card h3 {
+	margin-bottom: 10px;
+  }
+  .card p {
+	margin-bottom: 5px;
+  }
+  
+  /* підвал сторінки (якщо є) */
+  footer {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0.9em;
+	color: var(--gray-medium);
+  }
+  

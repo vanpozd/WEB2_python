@@ -1,0 +1,47 @@
+<!-- templates/locations.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Локації погоди</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Доступні локації</h1>
+    <nav>
+      <a href="/">Головна</a>
+      <a href="/locations/create">Додати локацію</a>
+      <a href="/signup">Реєстрація</a>
+      <span>Користувач: {{ user.username }} ({{ user.role }})</span>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+    {% if locations %}
+      <ul>
+        {% for loc in locations %}
+          <li>
+            <strong>{{ loc.name }}</strong>: {{ loc.description }}
+            {% if user.role == 'admin' %}
+              [<a href="/locations/{{ loc.id }}/edit">Редагувати</a>]
+              <form action="/locations/{{ loc.id }}/delete" method="post" style="display:inline">
+                <button type="submit">Видалити</button>
+              </form>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Немає жодної локації.</p>
+    {% endif %}
+  </main>
+
+  <footer>
+    <hr />
+    <p>&copy; 2025 Weather App</p>
+  </footer>
+</body>
+</html>

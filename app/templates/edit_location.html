@@ -1,0 +1,44 @@
+<!-- templates/edit_location.html -->
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Редагувати локацію</title>
+	<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+
+<body>
+	<header>
+		<h1>Редагувати локацію</h1>
+		<nav>
+			<a href="/">Головна</a>
+			<a href="/locations/create">Додати локацію</a>
+			<a href="/signup">Реєстрація</a>
+			<span>Користувач: {{ user.username }} ({{ user.role }})</span>
+		</nav>
+		<hr />
+	</header>
+
+	<main>
+		<form method="post" action="/locations/{{ location.id }}/edit">
+			<label for="name">Назва:</label><br />
+			<input type="text" id="name" name="name" value="{{ location.name }}" required /><br /><br />
+
+			<label for="description">Опис:</label><br />
+			<textarea id="description" name="description" rows="3"
+				required>{{ location.description }}</textarea><br /><br />
+
+			<button type="submit">Зберегти</button>
+			<a href="/">Скасувати</a>
+		</form>
+	</main>
+
+	<footer>
+		<hr />
+		<p>&copy; 2025 Weather App</p>
+	</footer>
+</body>
+
+</html>
